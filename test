@@ -1,0 +1,79 @@
+#include <stdio.h>
+
+int main() {
+
+	int coffee = 4500;
+	int green_tea_latte = 6000; 
+	int cookie = 2000;
+	int cheesecake = 11000;
+	int order = 0; 
+	int money = 10000;
+	int sum = 0; 
+
+	printf("현재 소지금 : %d", money);
+	printf("메뉴판\n");
+	printf("1. 커피(4500원)\n2. 말차라떼(6000원)\n3. 쿠키(2000원)\n4. 치즈케이크(11000원)\n");
+	printf("메뉴의 번호를 입력해주세요\n");
+	scanf("%d", &order);  
+
+	switch (order) 
+	{
+	case 1:
+
+		money -= coffee; 
+		sum += coffee;
+
+		if (money - coffee >= 0) 
+		{ 
+		printf("커피 주문 완료\n");
+		}
+		break;
+
+	case 2: 
+		money -= green_tea_latte; 
+		sum += green_tea_latte;
+
+		if (money - green_tea_latte >= 0) 
+		{ 
+			printf("말차라떼 주문 완료\n");
+		}
+		break;
+
+	case 3:
+
+		money -= cookie; 
+		sum += cookie;
+
+		if (money - cookie >= 0) 
+		{
+			
+			printf("쿠키 주문 완료\n");
+		}
+		break;
+
+	case 4:
+
+		money -= cheesecake; 
+		sum += cheesecake;
+
+		if (money - cheesecake >= 0) 
+		{
+			
+			printf("치즈케이크 주문 완료\n");
+		}
+		break;
+
+	default:
+		printf("잘못입력하셨습니다.\n");
+		
+
+	}
+
+	if (money < 0) 
+		printf("잔액 부족"); 
+
+	else if (money >= 0) 
+		printf("결제 금액 : %d\n 남은 소지금 : %d\n", sum, money);
+
+	return 0;
+}
